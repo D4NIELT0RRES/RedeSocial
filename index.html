@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,22 +7,29 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
     <div class="container">
-        <img src="./img/image 1.png" class="logo" alt="logo">
+        <img src="./img/image 1.png" class="logo" alt="Logo">
     </div>
+
     <div class="grupao">
         <h1>LOGIN</h1>
-        
-        <!-- Tela de Login -->
-        <label for="username" class="username">Username</label>
-        <input type="text" class="icon-input1" id="username" placeholder="Digite seu username">
 
-        <label for="password" class="password">Password</label>
-        <input type="password" class="icon-input2" id="password" placeholder="Digite sua senha">
-        
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="icon-input1" id="username" placeholder="Digite seu username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="icon-input2" id="password" placeholder="Digite sua senha">
+        </div>
+
         <button onclick="LOGIN()">LOGIN</button>
 
-        <p class="register-text">Não tem uma conta? Registre</p>
+        <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+        <p class="register-text">Não tem uma conta? <a href="#">Registre-se</a></p>
     </div>
 </body>
 </html>
