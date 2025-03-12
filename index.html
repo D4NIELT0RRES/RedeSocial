@@ -1,23 +1,29 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trocar um Papo</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
-        <img src="./img/image 1.png" alt="logo">
-        <div class="grupao">
-            <h1>Trocar um Papo</h1>
-            
-            <label for="username" class="Username">Username</label>
-            <input type="text" class="username" id="username">
+        <img src="./img/image 1.png" class="logo" alt="logo">
+    </div>
+    <div class="grupao">
+        <h1>LOGIN</h1>
+        
+        <!-- Tela de Login -->
+        <label for="username" class="username">Username</label>
+        <input type="text" class="icon-input1" id="username" placeholder="Digite seu username">
 
-            <label for="password" class="password">Password</label>
-            <input type="text" class="password" id="password">
+        <label for="password" class="password">Password</label>
+        <input type="password" class="icon-input2" id="password" placeholder="Digite sua senha">
+        
+        <button onclick="LOGIN()">LOGIN</button>
 
-        </div>
+        <p class="register-text">Não tem uma conta? Registre</p>
     </div>
 </body>
 </html>

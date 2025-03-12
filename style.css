@@ -1,0 +1,117 @@
+
+/* Reset básico */
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('./img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    /* align-items: center; */
+}
+
+/* Container da logo */
+.container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Estilo da div central (grupao) */
+.grupao {
+    background: rgb(48, 157, 244);
+    padding: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+/* Estilo do título */
+.grupao h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos inputs */
+input {
+    width: 90%;
+    height: 30px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Placeholder dos inputs */
+input::placeholder {
+    color: #888;
+}
+
+/* Estilo dos labels */
+label {
+    display: block;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* Estilo do botão */
+button {
+    width: 40%;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background: rgb(48, 157, 244);
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: 1px solid white;
+}
+
+/* Efeito hover no botão */
+button:hover {
+    background: rgb(30, 120, 200);
+}
+
+/* Texto de registro */
+.register-text {
+    font-size: 12px;
+    color: white;
+    margin-top: 15px;
+}
+.grupao p{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+.icon-input1{
+    width: 300px;
+    background-image: url(./comment-user\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+}
+.icon-input2{
+    width: 300px;
+    background-image: url(./image\ 2.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+}
