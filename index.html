@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trocar um Papo</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -12,7 +13,8 @@
         <img src="./img/image 1.png" class="logo" alt="Logo">
     </div>
 
-    <div class="grupao">
+    <!-- Tela de Login -->
+    <div id="login-screen" class="grupao">
         <h1>LOGIN</h1>
 
         <div class="form-group">
@@ -31,5 +33,35 @@
 
         <p class="register-text">Não tem uma conta? <a href="#">Registre-se</a></p>
     </div>
+
+    <!-- Tela de Registro -->
+    <div id="register-screen" class="grupao hidden">
+        <h1>REGISTRAR</h1>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="icon-input1" id="username" placeholder="Digite seu username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="icon-input1" id="email" placeholder="Digite seu email">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="icon-input2" id="password" placeholder="Digite sua senha">
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" class="icon-input2" id="confirm-password" placeholder="Confirme sua senha">
+        </div>
+
+        <button onclick="REGISTER()">REGISTER</button>
+
+        <p class="login-text">Já tem uma conta? <a href="#">Login</a></p>
+    </div>
+
 </body>
 </html>
