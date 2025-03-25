@@ -137,7 +137,3 @@ button:hover {
     background-size: 18px;
 }
 
-/* Classe para ocultar elementos */
-.hidden {
-    display: none;
-}
