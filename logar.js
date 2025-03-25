@@ -1,23 +1,7 @@
 const validarLogin = document.getElementById('botao_logar')
 
 
-function carregarTelaLogin(){
-    const container = document.createElement('div')
-    container.classList.add('container')
-    const imgLogo = document.createElement('img')
-    imgLogo.classList.add('logo')
 
-    const grupaoHidden = document.createElement('div')
-    grupaoHidden.classList.add('grupao hidden')
-    const h1Titulo = document.createElement('h1')
-    
-    const form_group = document.createElement('div')
-    form_group.classList.add('form-group')
-
-
-    //Adicionando
-    container.appendChild(imgLogo)
-}
 
 async function loginUsuario() {
     const email = document.getElementById('username').value
@@ -47,4 +31,4 @@ async function loginUsuario() {
 }
 
 validarLogin.addEventListener('click',loginUsuario)
-carregarTelaLogin()
+
