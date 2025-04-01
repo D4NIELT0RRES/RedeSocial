@@ -136,4 +136,7 @@ button:hover {
     background-position: right 10px center;
     background-size: 18px;
 }
+p {
+    color: white;
+}
 
