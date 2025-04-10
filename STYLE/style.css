@@ -3,7 +3,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('./img/fundo.png');
+    background-image: url('../SRC/img/fundo.png');
     background-size: cover;
     background-position: center;
     display: flex;

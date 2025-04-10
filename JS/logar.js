@@ -22,9 +22,10 @@ async function loginUsuario() {
 
     const response = await fetch(url,options)
 
+    localStorage.setItem('nome_usuario', email)
 
     if(response.status == 200){
-        window.location.href = "registro.html"
+        window.location.href = "../SRC/screens/home.html"
     }else{
         alert('EMAIL OU SENHA INCORRETOS')
     }
