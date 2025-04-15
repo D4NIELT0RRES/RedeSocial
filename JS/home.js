@@ -1,5 +1,15 @@
-const post = document.getElementById('postContainer')
+const postContainer = document.getElementById('postContainer')
 const enviarPostagem = document.getElementById('enviando')
+
+const dataAtual = new Date()
+
+const dia = dataAtual.getDate()
+const mes = dataAtual.getMonth() + 1
+const ano = dataAtual.getFullYear()
+
+const dataFormatada = `${dia.toString().padStart(2,'0')}/${mes.toString().padStart(2,'0')}/${ano}`
+
+console.log(dataFormatada)
 
 async function criarPublicacao(){
     const descricao = document.getElementById('descricao').value
@@ -30,7 +40,10 @@ async function criarPublicacao(){
         containerTextos.classList.add('containerText')
         const h1Titulo = document.createElement('h1')
         const pData = document.createElement('p')
+        const divConteudo = document.createElement('div')
+        divConteudo.classList.add('conteudo')
         const pDescricao = document.createElement('p')
+
 
         const comment = document.createElement('div')
         comment.classList.add('comment')
@@ -38,19 +51,21 @@ async function criarPublicacao(){
         const pComentario = document.createElement('p')
 
         
-        console.log(String(localStorage.getItem('nome_usuario')))
+        const nomeGuardado = localStorage.getItem('nome_usuario')
 
+        h1Titulo.textContent = nomeGuardado
+        pData.textContent = dataFormatada
+        pDescricao.textContent = descricao
 
+        divConteudo.appendChild(pDescricao)
+        postContainer.appendChild(divConteudo)
         postHeader.appendChild(imgPostagem)
         containerTextos.appendChild(pData)
         containerTextos.appendChild(h1Titulo)
         postHeader.appendChild(containerTextos)
         postHeader.appendChild(pDescricao)
-        post.appendChild(postHeader)
+        postContainer.appendChild(postHeader)
     }
-
-    console.log(response)
-
     
 }
 
