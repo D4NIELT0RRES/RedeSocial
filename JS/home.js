@@ -9,14 +9,13 @@ const ano = dataAtual.getFullYear()
 
 const dataFormatada = `${dia.toString().padStart(2,'0')}/${mes.toString().padStart(2,'0')}/${ano}`
 
-console.log(dataFormatada)
 
 async function criarPublicacao(){
     const descricao = document.getElementById('descricao').value
 
     const data = {
         descricao: descricao,
-        dataPublicacao: `'${new Date()}'`,
+        dataPublicacao: dataFormatada,
         imagem: 'https://www.aluralingua.com.br/artigos/assets/professor.jpg',
         local: "SENAI",
         idUsuario: 3
@@ -33,6 +32,28 @@ async function criarPublicacao(){
     const response = await fetch(url,options)
 
     if(response.status == 201){
+        alert('Postagem criada')
+        window.location.reload()
+    }
+
+    return response.status
+    
+}
+
+async function BaseRecarregarPostagens(){
+    const url = `https://back-spider.vercel.app/publicacoes/listarPublicacoes`
+    const response = await fetch(url)
+
+    const data = await response.json()
+    return data
+}
+
+async function recarregarPostagens(){
+    const base = await BaseRecarregarPostagens()
+
+    const baseOrdenada = base.reverse()
+
+    baseOrdenada.forEach(function(item){
         const postHeader = document.createElement('div')
         postHeader.classList.add('post-header')
         const imgPostagem = document.createElement('img')
@@ -50,12 +71,12 @@ async function criarPublicacao(){
         const h1Comentario = document.createElement('h1')
         const pComentario = document.createElement('p')
 
-        
+    
         const nomeGuardado = localStorage.getItem('nome_usuario')
 
         h1Titulo.textContent = nomeGuardado
-        pData.textContent = dataFormatada
-        pDescricao.textContent = descricao
+        pData.textContent = item.dataPublicacao
+        pDescricao.textContent = item.descricao
 
         divConteudo.appendChild(pDescricao)
         postContainer.appendChild(divConteudo)
@@ -65,8 +86,13 @@ async function criarPublicacao(){
         postHeader.appendChild(containerTextos)
         postHeader.appendChild(pDescricao)
         postContainer.appendChild(postHeader)
-    }
-    
+    })
+
 }
 
+
+
+
+
+recarregarPostagens()
 enviarPostagem.addEventListener('click',criarPublicacao)
