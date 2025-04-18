@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#mainLogin{
+.mainLoginRegistrer{
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -17,9 +17,6 @@
     justify-content: start;
     padding: 15px;
 }
-
-
-
 
 .contendoElementos{
     height: 100%;
@@ -135,6 +132,89 @@
     text-decoration: none;
     font-family: "ADLaM Display", system-ui;
 }
+
+/* TELA DE REGISTRO */
+.registerTitle{
+    height: 100px;
+    width: 288px;
+    border-radius: 12px;
+    background-color: #64B5F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grupao-hidden{
+    height: 636px;
+    width: 755px;
+    border-radius: 71px;
+    background-color: #2195f3be;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.form-group-register{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 15px;
+    position: relative;
+}
+
+.form-group-register label{
+    color: white;
+    font-size: 25px;
+    font-family: "ADLaM Display", system-ui;
+    font-weight: 15px;
+}
+
+.input-register{
+    height: 49px;
+    width: 586px;
+    border-radius: 41px;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-size: 25px;
+    font-family: "ADLaM Display", system-ui;
+}
+
+#registrar_usuario{
+    height: 88px;
+    width: 224px;
+    border-radius: 41px;
+    background-color: #ffffff;
+    border-style: none;
+    font-size: 30px;
+    color: black;
+    font-family: "ADLaM Display", system-ui;
+    margin-top: 10px;
+}
+
+.containerTextoRegistro{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid white;
+}
+
+
+.containerTextoRegistro p{
+    color: white;
+    font-size: 25px;
+    font-family: "ADLaM Display", system-ui;
+}
+
+.containerTextoRegistro a{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: "ADLaM Display", system-ui;
+}
+
 
 
 

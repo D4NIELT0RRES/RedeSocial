@@ -3,42 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../STYLE/style.css">
     <script src="../../JS/registrar.js" defer></script>
     <title>Registrar</title>
 </head>
 <body>
-
-    <div class="container">
-        <img src="../img/image 1.png" class="logo" alt="Logo">
-    </div>
-
-    <div id="register-screen" class="grupao hidden">
-        <h1>REGISTRAR</h1>
-
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="icon-input1" id="username" placeholder="Digite seu username">
+    <main class="mainLoginRegistrer">
+        <div class="container">
+            <img src="../img/image 1.png" class="logo" alt="Logo">
         </div>
+        
+        <div class="contendoElementos">
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="icon-input1" id="email" placeholder="Digite seu email">
+            <div id="register-screen" class="grupao-hidden">
+                <div class="registerTitle">
+                    <img src="../img/REGISTRAR.png" alt="registrerTitle">
+                </div>
+        
+                <div class="form-group-register">
+                    <label for="username">Username</label>
+                    <input type="text" class="input-register" id="username">
+                </div>
+        
+                <div class="form-group-register">
+                    <label for="email">Email</label>
+                    <input type="email" class="input-register" id="email">
+                </div>
+        
+                <div class="form-group-register">
+                    <label for="password">Password</label>
+                    <input type="password" class="input-register" id="password">
+                </div>
+        
+                <div class="form-group-register">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" class="input-register" id="confirm-password">
+                </div>
+        
+                <button id="registrar_usuario">REGISTER</button>
+                <div class="containerTextoRegistro">
+                    <p class="login-text">Já tem uma conta? <a href="../../index.html">Login</a></p>
+                </div>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="icon-input2" id="password" placeholder="Digite sua senha">
-        </div>
-
-        <div class="form-group">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" class="icon-input2" id="confirm-password" placeholder="Confirme sua senha">
-        </div>
-
-        <button id="registrar_usuario">REGISTER</button>
-
-        <p class="login-text">Já tem uma conta? <a href="../../index.html">Login</a></p>
-    </div>
+    </main>
 </body>
 </html>
