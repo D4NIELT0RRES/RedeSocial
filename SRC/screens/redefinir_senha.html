@@ -4,26 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REDEFINIR SENHA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../STYLE/style.css">
     <script src="../../JS/redefinir.js" defer></script>
 </head>
 <body>
-    <!-- Tela de Redefinir Senha -->
-    <div id="login-screen" class="grupao">
-        <h1>REDEFINIR SENHA</h1>
-
-        <div class="form-group">
-            <label for="username">Nova Senha</label>
-            <input type="text" class="icon-input1" id="password" placeholder="Digite sua nova senha">
+    <main id="telaDeRedefinir" class="mainLoginRegistrer">
+        <div class="container">
+            <img src="../img/image 1.png" class="logo" alt="Logo">
         </div>
-
-        <div class="form-group">
-            <label for="password">Confirme sua senha</label>
-            <input type="password" class="icon-input2" id="password" placeholder="Confime sua nova senha">
+        <div class="contendoElementosRecuperacao">
+            <img src="../img/TROCAR UM PAPO.png" alt="logoTitulo">~
+            <div id="login-screen" class="grupaoRec">
+                <div class="recuperSenhaTitle">
+                    <img src="../img/REDEFINIR SENHA.png" alt="">
+                </div>
+    
+                <div class="form-group">
+                    <label for="username">Nova Senha</label>
+                    <input type="text" class="icon-input" id="password">
+                </div>
+        
+                <div class="form-group">
+                    <label for="password">Confirme sua senha</label>
+                    <input type="password" class="icon-input" id="password">
+                </div>
+        
+                <button id="botao_logar" >ATUALIZAR</button>
+        
+            </div>
         </div>
-
-        <button id="botao_logar" >ATUALIZAR</button>
-
-    </div>
+    </main>
 </body>
 </html>
