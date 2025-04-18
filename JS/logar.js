@@ -4,7 +4,7 @@ const validarLogin = document.getElementById('botao_logar')
 
 
 async function loginUsuario() {
-    const email = document.getElementById('username').value
+    const email = document.getElementById('Email').value
     const senha = document.getElementById('password').value
 
     const data = {
@@ -21,8 +21,6 @@ async function loginUsuario() {
     }
 
     const response = await fetch(url,options)
-
-    localStorage.setItem('nome_usuario', email)
 
     if(response.status == 200){
         window.location.href = "../SRC/screens/home.html"

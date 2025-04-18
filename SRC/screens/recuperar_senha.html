@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
     <title>Recuperar Senha</title>
     <link rel="stylesheet" href="../../STYLE/style.css">
     <script src="rec.senha.js" defer></script>
 </head>
 <body>
-    <!-- Tela para Recuperar Senha -->
-    <div id="login-screen" class="grupao">
-        <h1>RECUPERAR SENHA</h1>
-
-        <p>Informe um e-mail e enviaremos um link para recuperar sua senha.</p>
-
-        <div class="form-group">
-            <label for="username">E-mail</label>
-            <input type="text" class="icon-input1" id="username" placeholder="Digite seu e-mail">
-
-            <input type="text" class="icon-input2" id="username" placeholder="Palavra chave">
+    <main id="mainTelaDeRecuperacao" class="mainLoginRegistrer">
+        <div class="container">
+            <img src="../img/image 1.png" class="logo" alt="Logo">
         </div>
+        <div class="contendoElementosRecuperacao">
+            <img src="../img/TROCAR UM PAPO.png" alt="logoTitulo">
+            <div id="login-screen" class="grupaoRec">
+                <div class="recuperSenhaTitle">
+                    <img src="../img/RECUPERAR SENHA.png" alt="">
+                </div>
         
-
-        <button id="botao_logar" href="./redefinir_senha.html">RECUPERAR</button>
-
-    </div>
+                <p id="textoInformativo">Informe um e-mail e enviaremos um link para recuperar sua senha.</p>
+        
+                <div class="form-group">
+                    <label for="username">E-mail</label>
+                    <input type="text" class="icon-input" id="username" placeholder="Digite seu e-mail">
+                </div>
+                
+        
+                <button id="botao_logar" href="./redefinir_senha.html">RECUPERAR</button>
+                <div class="containerTexto">
+                    <p class="register-text">Não tem uma conta? <a href="./registro.html">Registre-se</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

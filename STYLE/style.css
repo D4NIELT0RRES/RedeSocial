@@ -215,6 +215,42 @@
     font-family: "ADLaM Display", system-ui;
 }
 
+/* TELA DE RECUPERACAO */
 
+
+.contendoElementosRecuperacao{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.grupaoRec{
+    height: 636px;
+    width: 755px;
+    border-radius: 71px;
+    background-color: #2195f3be;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+    padding: 25px;
+}
+.recuperarSenhaTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#textoInformativo{
+    width:70%;
+    font-family: "ADLaM Display", system-ui;
+    font-size: 25px;
+    color: #D9D9D9;
+    text-align: center;
+}
 
 

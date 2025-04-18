@@ -16,8 +16,6 @@ async function registrarUsuario() {
             senhaRecuperacao: "reset@1212"
         }
 
-        console.log(data);
-        
         
         const url = "https://back-spider.vercel.app/user/cadastrarUser"
 
@@ -29,9 +27,12 @@ async function registrarUsuario() {
 
         const response = await fetch(url,options)
 
-        console.log(response)
+        localStorage.setItem('nome_usuario',nome)
+
+
         if(response.status == 201){
-            console.log('Deu okay')
+            alert('Registrado com sucesso')
+            window.location.href = '../index.html' 
         }else{
             alert("CAMPOS INCORRETOS")
         }
