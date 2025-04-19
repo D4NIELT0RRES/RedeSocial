@@ -360,6 +360,7 @@
 }
 
 .textosPerfil{
+    width: 100%;
     margin-left: 10px;
 }
 
@@ -371,6 +372,10 @@
 .textosPerfil p{
     font-family: "ADLaM Display", system-ui;
     color: #9F9F9F;
+}
+
+.postagem {
+    width: 100%;
 }
 
 .postagem p{

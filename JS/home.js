@@ -8,17 +8,41 @@ const mes = dataAtual.getMonth() + 1
 const ano = dataAtual.getFullYear()
 
 const dataFormatada = `${dia.toString().padStart(2,'0')}/${mes.toString().padStart(2,'0')}/${ano}`
+const usernameGuardado = localStorage.getItem('nome_usuario')
+
+
+async function pegarIdUser(){
+    const url = `https://back-spider.vercel.app/user/listarUsers`
+    const response = await fetch(url)
+
+    const data = await response.json()
+
+    let idUsuario = 0
+
+
+    
+    data.forEach(function(item){
+
+        if(item.nome == usernameGuardado){
+            idUsuario = item.id
+        }
+    })
+
+    
+    return idUsuario
+}
 
 
 async function criarPublicacao(){
     const descricao = document.getElementById('descricao').value
+    const idUser = await pegarIdUser()
 
     const data = {
         descricao: descricao,
         dataPublicacao: dataFormatada,
         imagem: 'https://www.aluralingua.com.br/artigos/assets/professor.jpg',
         local: "Senai Jandira",
-        idUsuario: 3
+        idUsuario: idUser
     }
 
     const url = "https://back-spider.vercel.app/publicacoes/cadastrarPublicacao"
@@ -69,23 +93,26 @@ async function recarregarPostagens(){
         const postagem = document.createElement('div')
         postagem.classList.add('postagem')
         const pPostagem = document.createElement('p')
+
+        h3Perfil.textContent = usernameGuardado
+        pPerfil.textContent = item.local
+        pPostagem.textContent = item.descricao
         
         
 
-
+        
         containerInformacoes.appendChild(fotoPerfil)
         containerInformacoes.appendChild(textosPerfil)
         textosPerfil.appendChild(h3Perfil)
         textosPerfil.appendChild(pPerfil)
-
         postagem.appendChild(pPostagem)
-        containerPostagem.appendChild(postagem)
+
         containerPostagem.appendChild(containerInformacoes)
+        containerPostagem.appendChild(postagem)
         postContainer.appendChild(containerPostagem)
     })
 
 }
-
 
 
 
