@@ -32,7 +32,7 @@ async function registrarUsuario() {
 
         if(response.status == 201){
             alert('Registrado com sucesso')
-            window.location.href = '../index.html' 
+            window.location.href = '/index.html' 
         }else{
             alert("CAMPOS INCORRETOS")
         }

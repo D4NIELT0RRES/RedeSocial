@@ -1,4 +1,4 @@
-const postContainer = document.getElementById('postContainer')
+const postContainer = document.getElementById('containerPostagem')
 const enviarPostagem = document.getElementById('enviando')
 
 const dataAtual = new Date()
@@ -17,7 +17,7 @@ async function criarPublicacao(){
         descricao: descricao,
         dataPublicacao: dataFormatada,
         imagem: 'https://www.aluralingua.com.br/artigos/assets/professor.jpg',
-        local: "SENAI",
+        local: "Senai Jandira",
         idUsuario: 3
     }
 
@@ -45,6 +45,7 @@ async function BaseRecarregarPostagens(){
     const response = await fetch(url)
 
     const data = await response.json()
+
     return data
 }
 
@@ -54,38 +55,33 @@ async function recarregarPostagens(){
     const baseOrdenada = base.reverse()
 
     baseOrdenada.forEach(function(item){
-        const postHeader = document.createElement('div')
-        postHeader.classList.add('post-header')
-        const imgPostagem = document.createElement('img')
-        const containerTextos = document.createElement('div')
-        containerTextos.classList.add('containerText')
-        const h1Titulo = document.createElement('h1')
-        const pData = document.createElement('p')
-        const divConteudo = document.createElement('div')
-        divConteudo.classList.add('conteudo')
-        const pDescricao = document.createElement('p')
+        console.log(item)
+        const containerPostagem = document.createElement('div')
+        containerPostagem.classList.add('containerPostagem')
+        const containerInformacoes = document.createElement('div')
+        containerInformacoes.classList.add('containerInformacoes')
+        const fotoPerfil = document.createElement('div')
+        fotoPerfil.classList.add('fotoPerfil')
+        const textosPerfil = document.createElement('div')
+        textosPerfil.classList.add('textosPerfil')
+        const h3Perfil = document.createElement('h3')
+        const pPerfil = document.createElement('p')
+        const postagem = document.createElement('div')
+        postagem.classList.add('postagem')
+        const pPostagem = document.createElement('p')
+        
+        
 
 
-        const comment = document.createElement('div')
-        comment.classList.add('comment')
-        const h1Comentario = document.createElement('h1')
-        const pComentario = document.createElement('p')
+        containerInformacoes.appendChild(fotoPerfil)
+        containerInformacoes.appendChild(textosPerfil)
+        textosPerfil.appendChild(h3Perfil)
+        textosPerfil.appendChild(pPerfil)
 
-    
-        const nomeGuardado = localStorage.getItem('nome_usuario')
-
-        h1Titulo.textContent = nomeGuardado
-        pData.textContent = item.dataPublicacao
-        pDescricao.textContent = item.descricao
-
-        divConteudo.appendChild(pDescricao)
-        postContainer.appendChild(divConteudo)
-        postHeader.appendChild(imgPostagem)
-        containerTextos.appendChild(pData)
-        containerTextos.appendChild(h1Titulo)
-        postHeader.appendChild(containerTextos)
-        postHeader.appendChild(pDescricao)
-        postContainer.appendChild(postHeader)
+        postagem.appendChild(pPostagem)
+        containerPostagem.appendChild(postagem)
+        containerPostagem.appendChild(containerInformacoes)
+        postContainer.appendChild(containerPostagem)
     })
 
 }

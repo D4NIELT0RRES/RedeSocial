@@ -23,6 +23,7 @@ async function loginUsuario() {
     const response = await fetch(url,options)
 
     if(response.status == 200){
+        alert('LOGIN REALIZADO')
         window.location.href = "../SRC/screens/home.html"
     }else{
         alert('EMAIL OU SENHA INCORRETOS')
