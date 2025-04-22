@@ -1,7 +1,7 @@
 const botao_logar = document.getElementById('botao_logar')
 
 async function redefinirSenha() {
-    
+   
     const senha = document.getElementById('password').value
 
     const data = {
@@ -25,6 +25,7 @@ async function redefinirSenha() {
         alert('SENHA REDEFINIDA')
         window.location.href = "../../index.html"
     }
+
 }
 
 botao_logar.addEventListener('click', redefinirSenha)

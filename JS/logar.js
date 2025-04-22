@@ -22,6 +22,11 @@ async function loginUsuario() {
 
     const response = await fetch(url,options)
 
+    const voltandoArray = await response.json()
+    
+
+    localStorage.setItem('idUser', voltandoArray.user.id)
+    
     if(response.status == 200){
         alert('LOGIN REALIZADO')
         window.location.href = "../SRC/screens/home.html"

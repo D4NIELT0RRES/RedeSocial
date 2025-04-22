@@ -19,10 +19,9 @@ async function pegarIdUser(){
 
     let idUsuario = 0
 
-
+    console.log(data)
     
     data.forEach(function(item){
-
         if(item.nome == usernameGuardado){
             idUsuario = item.id
         }
@@ -52,6 +51,7 @@ async function criarPublicacao(){
         headers: {'content-type':'Application/Json'},
         body: JSON.stringify(data)
     }
+
     
     const response = await fetch(url,options)
 
@@ -73,13 +73,38 @@ async function BaseRecarregarPostagens(){
     return data
 }
 
+async function curtirPost(id){
+    const data = {
+        idUser: localStorage.getItem('idUser')
+    }
+
+
+    const url = `https://back-spider.vercel.app/publicacoes/likePublicacao/${id}`
+
+    const options = {
+        method: 'Put',
+        headers: {'content-type':'Application/Json'},
+        body: JSON.stringify(data)
+    }
+
+    const response = await fetch(url,options)
+
+    const coracao = document.getElementById(id)
+
+    if(response.status == 200){
+        coracao.src = '../img/blueHeart.png'
+    }
+
+}
+
 async function recarregarPostagens(){
     const base = await BaseRecarregarPostagens()
 
     const baseOrdenada = base.reverse()
 
-    baseOrdenada.forEach(function(item){
-        console.log(item)
+    baseOrdenada.forEach(async function(item){
+        
+
         const containerPostagem = document.createElement('div')
         containerPostagem.classList.add('containerPostagem')
         const containerInformacoes = document.createElement('div')
@@ -93,22 +118,47 @@ async function recarregarPostagens(){
         const postagem = document.createElement('div')
         postagem.classList.add('postagem')
         const pPostagem = document.createElement('p')
+        const imgPostagem = document.createElement('img')
+        const interacoes = document.createElement('div')
+        interacoes.classList.add('interacoes')
+        const coracao = document.createElement('img')
+        coracao.classList.add('curtida')
+        const comentarios = document.createElement('img')
 
-        h3Perfil.textContent = usernameGuardado
+        const url = `https://back-spider.vercel.app/user/pesquisarUser/${item.idUsuario}`
+        const response = await fetch(url)
+        const data = await response.json()
+
+       
+        fotoPerfil.style.backgroundImage = `url('${data.imagemPerfil}')`
+        h3Perfil.textContent = data.nome
         pPerfil.textContent = item.local
         pPostagem.textContent = item.descricao
-        
-        
+        imgPostagem.src = item.imagem
+        coracao.src = '../img/blackHeart.png'
+        coracao.id = item.idUsuario
+        coracao.addEventListener('click', () => curtirPost(item.idUsuario))
 
+
+        
+        comentarios.src = '../img/comments.png'
+
+
+        interacoes.appendChild(coracao)
+        interacoes.appendChild(comentarios)
         
         containerInformacoes.appendChild(fotoPerfil)
         containerInformacoes.appendChild(textosPerfil)
         textosPerfil.appendChild(h3Perfil)
         textosPerfil.appendChild(pPerfil)
         postagem.appendChild(pPostagem)
+        postagem.appendChild(imgPostagem)
 
+        
+        containerPostagem.appendChild(interacoes)
         containerPostagem.appendChild(containerInformacoes)
         containerPostagem.appendChild(postagem)
+        containerPostagem.appendChild(interacoes)
         postContainer.appendChild(containerPostagem)
     })
 
