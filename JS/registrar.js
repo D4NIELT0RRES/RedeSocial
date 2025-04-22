@@ -29,6 +29,8 @@ async function registrarUsuario() {
 
         localStorage.setItem('nome_usuario',nome)
 
+        console.log(data)
+
 
         if(response.status == 201){
             alert('Registrado com sucesso')
@@ -38,5 +40,6 @@ async function registrarUsuario() {
         }
     }
 }
+
 
 botaoRegistrar.addEventListener('click', registrarUsuario)
